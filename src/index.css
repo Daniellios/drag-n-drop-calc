@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+  }
+}
+
+@layer components {
+  .App {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+  }
+
+  .button_calculator {
+    @apply flex  justify-center  items-center border border-[#E2E3E5] hover:border-[#5D5FEF] hover:border-2  rounded-md h-12  font-medium leading-[15px] text-center;
+  }
+
+  .button_operator {
+    @apply w-[52px];
+  }
+
+  .button_zero {
+    @apply flex col-span-2 justify-center items-center border border-[#E2E3E5] rounded-md h-12 font-medium leading-[15px] text-center;
+  }
+
+  .button_no_hover {
+    @apply hover:border-transparent;
+  }
+
+  .switcher_btn {
+    @apply flex h-full justify-center items-center gap-2 rounded-[5px] px-3 py-2  border border-transparent;
+  }
+
+  .shadow_container {
+    @apply p-1 border border-transparent rounded-[4px] shadow-md;
+  }
+
+  .line_before::before {
+    content: url("/line.svg");
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: -12px;
+  }
+
+  .line_after::after {
+    content: url("/line.svg");
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  .no_drag_overlay::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    cursor: not-allowed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    right: 0;
+    z-index: 100;
+    background-color: #ffff;
+
+    opacity: 0.5;
+  }
+
+  .no_click_overlay::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    cursor: grab;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    right: 0;
+    z-index: 100;
+  }
+
+  .no_click {
+    @apply cursor-wait;
+  }
+}

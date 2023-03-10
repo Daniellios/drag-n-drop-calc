@@ -1,4 +1,4 @@
 # drag-n-drop-calc
 
-> npm i
-> npm run dev
+- npm i
+- npm run dev

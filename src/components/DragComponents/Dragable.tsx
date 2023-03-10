@@ -35,7 +35,7 @@ const Dragable: React.FC<DragableProps> = ({
     isDragging,
   } = useSortable({ id, disabled, data: { idx } });
 
-  const canvasState = useSelector((state: RootState) => state.ui.canvasState);
+  const { canvasState } = useSelector((state: RootState) => state.ui);
 
   const CONSTRUCTOR = canvasState === CanvasStateType.CONSTRUCTOR;
 
@@ -56,7 +56,7 @@ const Dragable: React.FC<DragableProps> = ({
       ? idx > activeIndex && !over.id.includes("shadowed")
         ? "line_before"
         : "line_after"
-      : "undefined";
+      : "";
 
   return (
     <div

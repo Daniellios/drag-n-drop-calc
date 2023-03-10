@@ -44,7 +44,7 @@ const Dragable: React.FC<DragableProps> = ({
     transition,
   };
 
-  const blockOverlayStyle = isUnDraggable && `no_drag_overlay`;
+  const blockHasOverlayStyle = isUnDraggable && `no_drag_overlay`;
   const blockIsDrragging = isDragging && `no_drag_overlay`;
 
   const blockHasContainer = hasContainer && `shadow_container`;
@@ -65,7 +65,7 @@ const Dragable: React.FC<DragableProps> = ({
       {...listeners}
       {...attributes}
       draggable={isUnDraggable}
-      className={`w-full relative ${blockOverlayStyle} ${canPress} ${blockIsDrragging} ${blockHasContainer} ${insertLine} `}
+      className={`w-full relative ${blockHasOverlayStyle} ${canPress} ${blockIsDrragging} ${blockHasContainer} ${insertLine} `}
     >
       {children}
     </div>
